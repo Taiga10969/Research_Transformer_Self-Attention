@@ -145,15 +145,15 @@ for epoch in range(args.epochs):
     if valid_loss < best_valid_loss:
         best_valid_loss = valid_loss
         if args.is_DataParallel == True:
-            torch.save(model.module.state_dict(), os.path.join(save_dir, f'{arg.runs_name}best_valid_loss.pt'))
+            torch.save(model.module.state_dict(), os.path.join(save_dir, f'{args.runs_name}best_valid_loss.pt'))
         else:
-            torch.save(model.state_dict(), os.path.join(save_dir, f'{arg.runs_name}best_valid_loss.pt'))
+            torch.save(model.state_dict(), os.path.join(save_dir, f'{args.runs_name}best_valid_loss.pt'))
     
 
     if args.is_DataParallel == True:
-        torch.save(model.module.state_dict(), os.path.join(save_dir, f'{arg.runs_name}_{epoch+1}epoch.pt'))
+        torch.save(model.module.state_dict(), os.path.join(save_dir, f'{args.runs_name}_{epoch+1}epoch.pt'))
     else:
-        torch.save(model.state_dict(), os.path.join(save_dir, f'{arg.runs_name}_{epoch+1}epoch.pt'))
+        torch.save(model.state_dict(), os.path.join(save_dir, f'{args.runs_name}_{epoch+1}epoch.pt'))
     
 
     print(f'Epoch: {epoch+1:02} | Epoch Time: {epoch_time}s')
@@ -168,8 +168,8 @@ for epoch in range(args.epochs):
                    "valid_acc": valid_acc,
                    })
         
-        wandb.alert(title=f"from WandB infomation project:{args.projects_name} run:{args.run}", 
-                    text=f"at the end of {epoch+1}epoch\ntrain_loss: {train_loss}\ntrain_acc: {train_acc}\nvalid_loss: {valid_loss}\nvalid_acc: {valid_acc}\n"
+        wandb.alert(title=f"from WandB info project:{args.projects_name} run:{args.runs_name}", 
+                    text=f"project:{args.projects_name} run:{args.runs_name}\nat the end of {epoch+1}epoch\ntrain_loss: {train_loss}\ntrain_acc: {train_acc}\nvalid_loss: {valid_loss}\nvalid_acc: {valid_acc}\n"
                     )
 
 wandb.finish()
