@@ -10,5 +10,19 @@
 
 - 作業メモ
 
-使用Dockerイメージ：
-python3 -m pip install --upgrade pip
+使用Dockerイメージ：[taiga10969/basic_image:cuda12.1.0-ubuntu22.04-python3.10](https://hub.docker.com/layers/taiga10969/basic_image/cuda12.1.0-ubuntu22.04-python3.10/images/sha256-076a9005a1daafe2910eda4354921bd852f8611fa70d040313a4504e880f981e?context=repo)<br>
+1. ```python3 -m pip install --upgrade pip```<br>
+
+
+
+### Training
+IMDBデータセットを使用して，BERTモデルにLinear層を追加した2クラス (positive or negative) に分類するモデルを構築し，学習を行なった．
+1. ```pip install -r requirements.txt```<br>
+2. ```chmod +x train.sh```<br>
+3. ```bash train.sh```<br>
+
+
+
+
+
+
