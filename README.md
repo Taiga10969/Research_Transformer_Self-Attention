@@ -8,8 +8,8 @@ Transformer内に組み込まれているSelf-Attentionは，異なるLinear層�
 ## 動作環境
 使用Dockerイメージ：[taiga10969/basic_image:cuda12.1.0-ubuntu22.04-python3.10](https://hub.docker.com/layers/taiga10969/basic_image/cuda12.1.0-ubuntu22.04-python3.10/images/sha256-076a9005a1daafe2910eda4354921bd852f8611fa70d040313a4504e880f981e?context=repo)<br>
 ```
-python3 -m pip install --upgrade pip<br>
-cd Research_transformer_Self-Attention<br>
+python3 -m pip install --upgrade pip
+cd Research_transformer_Self-Attention
 pip -r requirements.txt
 ```
 
