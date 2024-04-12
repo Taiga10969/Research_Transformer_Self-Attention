@@ -29,12 +29,16 @@ sectence_classificationでは，bertモデルの出力に対して，全結合�
 -  学習時
 ```
 from transformers import BertModel
+from models.sectence_classification import sectence_classification
 bert = BertModel.from_pretrained(bert_model_name)
+model = sectence_classification(bert=bert, output_dim=class_num)
 ```
 -  特徴量分布解析時
 ```
 from models.modeling_bert_get_feature import BertModel
+from models.sectence_classification import sectence_classification
 bert = BertModel.from_pretrained(bert_model_name)
+model = sectence_classification(bert=bert, output_dim=class_num)
 ```
 
 ## 2.特徴量分布の可視化
