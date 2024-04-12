@@ -58,7 +58,7 @@ model = sectence_classification(bert=bert, output_dim=class_num)
 ```
 python3 feature_distribution_umap.py --[option]
 ```
-**options**<br>
+**--[options]**<br>
 ```dataset_index```: モデルに推論させるデータを指定．IMDB datasetのテストデータのindexを指定．(default=3)<br>
 ```umap_seed```: umapで次元削減する際のumapのrandom_stateを指定．(default=2)<br>
 ```metric```: umapで次元削減する際のumapのmetricを指定．(default="euclidean")["euclidean", "manhattan", "cosine"]etc.<br>
