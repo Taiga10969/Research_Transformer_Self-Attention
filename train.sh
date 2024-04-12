@@ -3,22 +3,23 @@
 # 実行:
 #chmod +x train.sh
 #bash trian.sh
-# 引数を設定
+
+# 引数を設定 Config
 projects_name="BERTsentiment"
-runs_name="training_imdb_001"
+runs_name="training_imdb"
 wandb=true
-seed=0
+seed=111
 bert_model_name="bert-base-uncased"
 hf_dataset_name="stanfordnlp/imdb"
 max_seq_length=512
 testdata_split_rate=10
 class_num=2
 batch_size=64
-epochs=50
+epochs=25
 is_DataParallel=true
 
 # スクリプトの実行
-CUDA_VISIBLE_DEVICES=0 python3 train.py \
+CUDA_VISIBLE_DEVICES=3 python3 train.py \
     --projects_name "$projects_name" \
     --runs_name "$runs_name" \
     --wandb "$wandb" \
