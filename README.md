@@ -31,7 +31,11 @@ sectence_classificationでは，bertモデルの出力に対して，全結合�
 from transformers import BertModel
 bert = BertModel.from_pretrained(bert_model_name)
 ```
-
+-  特徴量分布解析時
+```
+from models.modeling_bert_get_feature import BertModel
+bert = BertModel.from_pretrained(bert_model_name)
+```
 
 ## 2.特徴量分布の可視化
 あるテストデータを入力した際のBERTモデル内の各ポイントでの特徴量を取得し，UMAPで次元削減し2次元のマップとして可視化を行う．<br>
