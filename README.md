@@ -26,7 +26,11 @@ IMDBデータセットを使用して，BERTモデルにLinear層を追加した
 sectence_classificationでは，bertモデルの出力に対して，全結合層を追加してクラス分類を行う．<br>
 学習時には，bertモデルを🤗transformersから直接読み込む．<br>
 特徴量分布の可視化を行う際には，各特徴量を出力可能にプログラムを改変したファイル/models/modeling_bert_get_feature.pyからモデルを読み込む．<br>
--- bert
+-  学習時
+```
+from transformers import BertModel
+bert = BertModel.from_pretrained(bert_model_name)
+```
 
 
 ## 2.特徴量分布の可視化
