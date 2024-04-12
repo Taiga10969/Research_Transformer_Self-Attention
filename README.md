@@ -15,8 +15,8 @@ pip -r requirements.txt
 
    
 ## 1.sentence classificationモデルの構築
-BERTモデルにLinear層を追加したクラス分類モデルを構築し，学習を行なった．
-### sentence classificationモデル
+BERTモデルにLinear層を追加したクラス分類モデルを構築し，学習を行う．
+### sentence_classificationモデル
 エンコーダとしてtransformersで提供されているBERTを使用（defaultで指定している"bert-base-uncased"を想定）する．<br>
 このBERTモデルをsectence_classificationモデルの引数```bert```に渡すことで，外部(🤗transformers)で定義されたモデルをエンコーダとして使用する．<br>
 sectence_classificationでは，bertモデルの出力に対して，全結合層を追加してクラス分類を行う．<br>
@@ -38,10 +38,9 @@ model = sectence_classification(bert=bert, output_dim=class_num)
 ```
 
 ### Training
-IMDBデータセットを使用して，BERTモデルにLinear層を追加した2クラス (positive or negative) に分類するモデルを構築し，学習を行なった．
+IMDBデータセットを使用して，sentence_classificationモデルを2クラス (positive or negative) 分類タスクを解くモデルとして構築し，学習を行う．
 1. ```chmod +x train.sh```<br>
 2. ```bash train.sh```<br>
-
 
 
 ## 2.特徴量分布の可視化
