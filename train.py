@@ -6,14 +6,13 @@ import argparse
 import torch.nn as nn
 import torch.optim as optim
 from torchinfo import summary
-from transformers import BertTokenizer
+from transformers import BertTokenizer, BertModel
 from torch.utils.data import DataLoader
 from transformers import AdamW, get_constant_schedule_with_warmup
 
 import utils
-from models.modeling_bert import BertModel
 from huggingface_datasets import IMDbDataset
-from models.bert_sentiment import BERT_sentiment
+from models.sectence_classification import sectence_classification
 
 
 
@@ -71,7 +70,7 @@ else: print(f'Use {torch.cuda.device_count()} GPUs')
 tokenizer = BertTokenizer.from_pretrained(args.bert_model_name)
 
 bert = BertModel.from_pretrained(args.bert_model_name)
-model = BERT_sentiment(bert=bert, output_dim=args.class_num)
+model = sectence_classification(bert=bert, output_dim=args.class_num)
 summary(model)
 
 if args.is_DataParallel == True:
