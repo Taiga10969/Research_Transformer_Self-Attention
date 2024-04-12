@@ -2,7 +2,9 @@ import os
 import math
 import time
 import torch
+import random
 import argparse
+import numpy as np
 import torch.nn as nn
 import torch.optim as optim
 from torchinfo import summary
@@ -59,6 +61,8 @@ for arg, value in vars(args).items():
 
 # 乱数の初期化／固定
 torch.manual_seed(args.seed)
+random.seed(args.seed)
+np.random.seed(args.seed)
 torch.backends.cudnn.deterministic = True
 
 # check GPU usage
