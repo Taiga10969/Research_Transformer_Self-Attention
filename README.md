@@ -14,11 +14,19 @@ pip -r requirements.txt
 ```
 
    
-## 1.Text Classificationモデルの構築
+## 1.sentence classificationモデルの構築
 ### Training
 IMDBデータセットを使用して，BERTモデルにLinear層を追加した2クラス (positive or negative) に分類するモデルを構築し，学習を行なった．
 1. ```chmod +x train.sh```<br>
 2. ```bash train.sh```<br>
+
+### sentence classificationモデル
+エンコーダとしてtransformersで提供されているBERTを使用（defaultで指定している"bert-base-uncased"を想定）する．<br>
+このBERTモデルをsectence_classificationモデルの引数bertに渡してあげることで，外部(transformers)で定義されたモデルをエンコーダとして使用する．<br>
+sectence_classificationでは，bertモデルの出力に対して，全結合層を追加してクラス分類を行う．<br>
+学習時には，bertモデルをtransformersから直接読み込む．<br>
+特徴量分布の可視化を行う際には，各特徴量を出力可能にプログラムを改変したファイル/models/modeling_bert_get_feature.pyからモデルを読み込む．<br>
+-- bert
 
 
 ## 2.特徴量分布の可視化
