@@ -15,7 +15,7 @@ pip -r requirements.txt
 
    
 ## 1.sentence classificationモデルの構築
-
+BERTモデルにLinear層を追加したクラス分類モデルを構築し，学習を行なった．
 ### sentence classificationモデル
 エンコーダとしてtransformersで提供されているBERTを使用（defaultで指定している"bert-base-uncased"を想定）する．<br>
 このBERTモデルをsectence_classificationモデルの引数```bert```に渡すことで，外部(🤗transformers)で定義されたモデルをエンコーダとして使用する．<br>
