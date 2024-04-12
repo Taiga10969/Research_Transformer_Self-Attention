@@ -38,7 +38,7 @@ model = sectence_classification(bert=bert, output_dim=class_num)
 ```
 
 ### Training
-IMDBデータセットを使用して，sentence_classificationモデルを2クラス (positive or negative) 分類タスクを解くモデルとして構築し，学習を行う．
+[IMDBデータセット](https://huggingface.co/datasets/stanfordnlp/imdb)を使用して，sentence_classificationモデルを2クラス (positive or negative) 分類タスクを解くモデルとして構築し，学習を行う．
 1. ```chmod +x train.sh```<br>
 2. ```bash train.sh```<br>
 
