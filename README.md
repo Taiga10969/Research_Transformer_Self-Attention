@@ -22,7 +22,7 @@ IMDBデータセットを使用して，BERTモデルにLinear層を追加した
 
 ### sentence classificationモデル
 エンコーダとしてtransformersで提供されているBERTを使用（defaultで指定している"bert-base-uncased"を想定）する．<br>
-このBERTモデルをsectence_classificationモデルの引数bertに渡すことで，外部(🤗transformers)で定義されたモデルをエンコーダとして使用する．<br>
+このBERTモデルをsectence_classificationモデルの引数```bert```に渡すことで，外部(🤗transformers)で定義されたモデルをエンコーダとして使用する．<br>
 sectence_classificationでは，bertモデルの出力に対して，全結合層を追加してクラス分類を行う．<br>
 学習時には，bertモデルを🤗transformersから直接読み込む．<br>
 特徴量分布の可視化を行う際には，各特徴量を出力可能にプログラムを改変したファイル/models/modeling_bert_get_feature.pyからモデルを読み込む．<br>
