@@ -53,7 +53,7 @@ model = sectence_classification(bert=bert, output_dim=class_num)
 - Multi-Head Attention (Self-Attention) の出力（Spik conection前）
 - Multi-Head Attention (Self-Attention) の出力（Spik conection後）
 - Feed Forward Netwarkの出力（Spik conection前）
-- - Feed Forward Netwarkの出力（Spik conection後）<br>
+- Feed Forward Netwarkの出力（Spik conection後）<br>
 の計5ポイントで，Input EmbeddingとPE以外はTransformer Encoderの積層数分(12layer)あるため，可視化する特徴量は合計38となる．
 ```
 python3 feature_distribution_umap.py --[option]
